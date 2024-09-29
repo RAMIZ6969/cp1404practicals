@@ -1,9 +1,24 @@
-MIN_PASSWORD_LENGTH = 8
+MINIMUM_LENGTH = 4
 
-password = input(f"Please enter a password (minimum length is {MIN_PASSWORD_LENGTH} characters): ")
 
-while len(password) < MIN_PASSWORD_LENGTH:
-    print(f"Error: Password must be at least {MIN_PASSWORD_LENGTH} characters long. Please try again.")
-    password = input(f"Please enter a password (minimum length is {MIN_PASSWORD_LENGTH} characters): ")
+def main():
+    """Get and print password using functions."""
+    password = get_password(MINIMUM_LENGTH)
+    print_asterisks(password)
 
-print("Password accepted.")
+
+def get_password(minimum_length):
+    """Get password with the minimum_length requirement."""
+    password = input(f"Enter password of at least {MINIMUM_LENGTH} characters: ")
+    while len(password) < MINIMUM_LENGTH:
+        print("Password too short")
+        password = input(f"Enter password of at least {MINIMUM_LENGTH} characters: ")
+    return password
+
+
+def print_asterisks(sequence):
+    """Print as many asterisks as there are characters in the passed-in sequence."""
+    print('*' * len(sequence))
+
+
+main()
