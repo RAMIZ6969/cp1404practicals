@@ -7,13 +7,13 @@ FILENAME = "subject_data.txt"
 
 
 def main():
-    """Read subject data and display neatly."""
+    """Load subject data from file and display it with correct format"""
     subjects = load_subjects()
     display_subjects(subjects)
 
 
 def load_subjects():
-    """Load data from file formatted like: code,lecturer,number_of_students."""
+    """Read subject data from the file and return it as a list of lists"""
     subject = []
     input_file = open(FILENAME)
     for line in input_file:
@@ -30,7 +30,7 @@ def load_subjects():
 
 
 def display_subjects(subjects):
-    """Display data nicely."""
+    """Display subject info."""
     for subject in subjects:
         print("{} is taught by {:12} and has {:3} students".format(*subject))
 
