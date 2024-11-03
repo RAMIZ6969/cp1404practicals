@@ -1,6 +1,6 @@
 """
 Time: 9:36 pm
-Time Taken:
+Time Taken: 12 mins
 """
 
 from prac_06.programming_language import ProgrammingLanguage
