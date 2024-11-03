@@ -1,36 +1,28 @@
 """CP1404/CP5632 Practical - Car class example."""
 
-
 class Car:
-    """Represent a Car object."""
+    """A class to represent a car."""
 
-    def __init__(self, name="", fuel=0):
-        """Initialise a Car instance.
-
-        fuel: float, one unit of fuel drives one kilometre
-        """
+    def __init__(self, name="", fuel_amount=0):
+        """Initialize a new Car instance with a name and initial fuel amount."""
         self.name = name
-        self.fuel = fuel
-        self._odometer = 0
+        self.fuel_amount = fuel_amount
+        self._distance = 0  # this will track the distance the car has traveled
 
     def __str__(self):
-        """Return a string representation of a Car object."""
-        return f"{self.name}, fuel={self.fuel}, odometer={self._odometer}"
+        """Return a string representation of the car."""
+        return f"{self.name}, fuel={self.fuel_amount}, odometer={self._distance}"
 
-    def add_fuel(self, amount):
-        """Add amount to the car's fuel."""
-        self.fuel += amount
+    def refuel(self, extra_fuel):
+        """Add extra fuel to the car's current fuel amount."""
+        self.fuel_amount += extra_fuel
 
-    def drive(self, distance):
-        """Drive the car a given distance.
-
-        Drive given distance if car has enough fuel
-        or drive until fuel runs out return the distance actually driven.
-        """
-        if distance > self.fuel:
-            distance = self.fuel
-            self.fuel = 0
+    def travel(self, distance_km):
+        """Drive the car for a given distance if enough fuel is available."""
+        if distance_km > self.fuel_amount:
+            distance_km = self.fuel_amount
+            self.fuel_amount = 0
         else:
-            self.fuel -= distance
-        self._odometer += distance
-        return distance
+            self.fuel_amount -= distance_km
+        self._distance += distance_km
+        return distance_km
