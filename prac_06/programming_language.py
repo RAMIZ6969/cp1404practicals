@@ -2,6 +2,8 @@
 Time: 9:15 pm
 Time taken: 17 mins
 """
+
+
 class ProgrammingLanguage:
     """Represent a programming language with typing, reflection support, and year created."""
 
@@ -20,6 +22,7 @@ class ProgrammingLanguage:
         """Return a string representation of a ProgrammingLanguage object."""
         return f"{self.name}, {self.typing} Typing, Reflection={self.reflection}, First appeared in {self.year}"
 
+
 def demo_programming_languages():
     """Demonstrate the use of the ProgrammingLanguage class with sample languages."""
     ruby_language = ProgrammingLanguage("Ruby", "Dynamic", True, 1995)
@@ -36,5 +39,4 @@ def demo_programming_languages():
             print(lang.name)
 
 
-if __name__ == "__main__":
-    demo_programming_languages()
+demo_programming_languages()
