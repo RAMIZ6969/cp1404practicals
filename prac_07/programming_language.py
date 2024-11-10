@@ -38,7 +38,6 @@ def run_tests():
     c_language = ProgrammingLanguage("C", "Static", False, 1972, True)
 
     languages = [ruby, python, visual_basic, c_language]
-    #  print(python)
 
     print("The dynamically typed languages are:")
     for language in languages:
