@@ -1,3 +1,5 @@
+"""Estimated time: 1 hour"""
+
 import datetime
 
 
